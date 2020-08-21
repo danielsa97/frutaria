@@ -2,7 +2,7 @@
 Sistema de gerenciamento de venda de frutas(processo seletivo).
 Este é front-end do sistema, desenvolvido com VueJs o mesmo funciona em 
 conjunto com a api "frutaria-api".\
-[DEMO ONLINE](https://danieldesa.com/project/frutaria/)\
+[DEMO ONLINE](https://danieldesa.com/project/frutaria/)
 ## Tecnologias do projeto
  - Vuejs
  - Vue-Cli(Linha de comando do VueJs)
@@ -37,7 +37,7 @@ npm install
 se adequar ao cenário de sua infraestrutura.\
  É de suma importancia configurar a variável `HOST_API` para correto funcionamento do sistema, por padrão, o host para teste é:
  ```
-     https://frutaria-api.danieldesa.com
+ https://frutaria-api.danieldesa.com
  ```
 
 
@@ -49,7 +49,7 @@ npm run serve
 ```
 Para gerar o build do sistema execute o comando abaixo.
 ```
-    npm run build
+npm run build
 ```
 
 Será gerado uma pasta `dist` na raiz do projeto com os arquivos preparados para deploy da aplicação.
