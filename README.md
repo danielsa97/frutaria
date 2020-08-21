@@ -2,7 +2,7 @@
 Sistema de gerenciamento de venda de frutas(processo seletivo).
 Este é front-end do sistema, desenvolvido com VueJs o mesmo funciona em 
 conjunto com a api "frutaria-api".\
-[DEMO ONLINE](https://danieldesa.com/project/frutaria/)\
+[DEMO ONLINE](https://frutaria.danieldesa.com)\
 Dados de acesso:\
 E-mail: admin@admin.com\
 Senha: password
