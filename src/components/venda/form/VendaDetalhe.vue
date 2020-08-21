@@ -1,8 +1,25 @@
 <template>
-    <b-modal id="venda_detalhe_modal"
-             title="Detalhes da Vendas"
-             @hidden="reset">
-
+    <b-modal id="venda_detalhe_modal" title="Detalhes da Vendas" hide-footer>
+        <div class="table-responsive">
+            <table class="table table-bordered">
+                <thead>
+                <tr>
+                    <th>Fruta</th>
+                    <th>Validade</th>
+                    <th>Quantidade</th>
+                    <th>Valor unitário(R$)</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr v-for="fruta in frutas" :key="fruta.id">
+                    <td>{{fruta.nome}}</td>
+                    <td>{{fruta.data_validade}}</td>
+                    <td>{{fruta.pivot.quantidade_fruta}}</td>
+                    <td>{{fruta.valor_unitario}}</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
     </b-modal>
 </template>
 
@@ -16,19 +33,10 @@
             };
         },
         methods: {
-            async getDetalhes(item) {
-                const frutaId = this.content?.fruta_id?.code;
-                if (frutaId) {
-                    const hasFruta = this.frutas.findIndex(fruta => fruta.id === frutaId);
-                    if (hasFruta !== -1) {
-                        this.$toast.error("A fruta selecionada já foi incluída");
-                    } else {
-                        let {data} = await this.$http.get(`fruta/${frutaId}/edit`);
-                        this.frutas.push(data);
-                    }
-                } else {
-                    this.$toast.error("Selecione uma fruta");
-                }
+            async getDetalhes({id}) {
+                const {data} = await this.$http.get(`venda/detalhe/${id}`);
+                this.frutas = data;
+                this.$bvModal.show('venda_detalhe_modal');
             }
         }
     }

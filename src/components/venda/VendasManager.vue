@@ -1,10 +1,9 @@
 <template>
     <div>
         <venda-form ref="venda_form" @save="dataTableRefresh"/>
-        <venda-detalhe ref="venda_form" @save="dataTableRefresh"/>
+        <venda-detalhe ref="venda_detalhe_modal"/>
         <data-table @create="$bvModal.show('venda_modal')"
-                    @detalhe="$refs.venda_detalhe_modal.edit($event)"
-                    @change-status="changeFrutaStatus"
+                    @detalhes="$refs.venda_detalhe_modal.getDetalhes($event)"
                     :id="datatable"
                     route="venda"/>
     </div>
@@ -25,9 +24,6 @@
             }
         },
         methods: {
-            changeFrutaStatus({id}) {
-                this.changeStatus(`venda/${id}/change-status`, this.datatable);
-            },
             dataTableRefresh() {
                 $(`#${this.datatable}`).DataTable().ajax.reload();
             }
