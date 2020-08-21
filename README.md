@@ -1,9 +1,9 @@
-#Frutaria
+# Frutaria
 Sistema de gerenciamento de venda de frutas(processo seletivo).
 Este é front-end do sistema, desenvolvido com VueJs o mesmo funciona em 
 conjunto com a api "frutaria-api".\
 [DEMO ONLINE](https://danieldesa.com/project/frutaria/)\
-##Tecnologias do projeto
+## Tecnologias do projeto
  - Vuejs
  - Vue-Cli(Linha de comando do VueJs)
  - Vue-Auth(Autenticação)
@@ -16,13 +16,13 @@ conjunto com a api "frutaria-api".\
  - V-money(Mascara para entrada de valor monetário)
  - AdminLTE(Dashboard admin template)
  - NProgress(Loading em requisições)
-##Requisitos do Sistema
+## Requisitos do Sistema
 Sistema Operacional: Linux(preferencial Deepin OS), Windows 10 pro.\
 NPM: Ultima versão estável\
 NodeJs: ^10.0.0\
 Git: Versão estável
 
-##Instalação
+## Instalação
 - Fazer o clone do projeto.
 
 ```
