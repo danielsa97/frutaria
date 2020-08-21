@@ -1,8 +1,9 @@
 <template>
     <div>
         <venda-form ref="venda_form" @save="dataTableRefresh"/>
+        <venda-detalhe ref="venda_form" @save="dataTableRefresh"/>
         <data-table @create="$bvModal.show('venda_modal')"
-                    @edit="$refs.venda_form.edit($event)"
+                    @detalhe="$refs.venda_detalhe_modal.edit($event)"
                     @change-status="changeFrutaStatus"
                     :id="datatable"
                     route="venda"/>
@@ -12,10 +13,11 @@
 <script>
     import ChangeStatusMixin from "../../mixins/ChangeStatusMixin";
     import VendaForm from "./form/VendaForm";
+    import VendaDetalhe from "./form/VendaDetalhe";
 
     export default {
         name: "VendasManager",
-        components: {VendaForm},
+        components: {VendaDetalhe, VendaForm},
         mixins: [ChangeStatusMixin],
         data() {
             return {
